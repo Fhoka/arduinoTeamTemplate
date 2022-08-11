@@ -35,7 +35,7 @@ void task1()
             // el apuntador pvar.
             printf("var content: %d\n", *pvar);
             // ESCRIBE el valor de var usando pvar
-            *pvar = 10;
+            *pvar = 7;
             printf("var content: %d\n", *pvar);
         }
         break;
