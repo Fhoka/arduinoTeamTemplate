@@ -1,8 +1,6 @@
 #include <Arduino.h>
 #include "task1.h"
 
-// Tarea 1
-
 void task1()
 {
     enum class Task1States
@@ -27,8 +25,18 @@ void task1()
         // Ha llegado al menos un dato por el puerto serial?
         if (Serial.available() > 0)
         {
+            // DEBES leer ese dato, sino se acumula y el buffer de recepción
+            // del serial se llenará.
             Serial.read();
-            Serial.print("Hola computador\n");
+            uint32_t var = 0;
+            // Almacena en pvar la dirección de var.
+            uint32_t *pvar = &var;
+            // Envía por el serial el contenido de var usando
+            // el apuntador pvar.
+            printf("var content: %d\n", *pvar);
+            // ESCRIBE el valor de var usando pvar
+            *pvar = 10;
+            printf("var content: %d\n", *pvar);
         }
         break;
     }
